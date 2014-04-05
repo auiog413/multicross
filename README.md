@@ -24,6 +24,6 @@ wordpress
     admin   pw: 123456
 
 mediawiki
-    数据库备份：
+    数据库备份：multicross/mediawiki/mediawiki_db.sql
     admin user: auioh413
     admin   pw: 123456
