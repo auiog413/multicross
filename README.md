@@ -17,3 +17,8 @@ zuitu
     数据库备份：multicross/zuitu/include/db/zuitu_db.sql 
     admin user: auioh413
     admin   pw: 123465
+
+wordpress
+    数据库备份：multicross/wordpress/wordpress_db.sql
+    admin user: auioh413
+    admin   pw: 123456
