@@ -85,9 +85,9 @@
 	If you wish, you can define QA_COOKIE_DOMAIN so that any cookies created by Q2A are assigned
 	to a specific domain name, instead of the full domain name of the request by default. This is
 	useful if you're running multiple Q2A sites on subdomains with a shared user base. 
-	
-	define('QA_COOKIE_DOMAIN', '.example.com'); // be sure to keep the leading period
-*/
+*/	
+	define('QA_COOKIE_DOMAIN', '.itron.me'); // be sure to keep the leading period
+
 
 /*
 	If you wish, you can define an array $QA_CONST_PATH_MAP to modify the URLs used in your Q2A site.
