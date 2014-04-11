@@ -74,3 +74,11 @@
 <?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:22	Sitemap管理	admin_sitemap-default
 <?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:22	自动升级	admin_upgrade-default
 <?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:22	自动升级	admin_upgrade-initpage
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	用户列表（管理用户）	admin_user-default
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	词条列表（管理词条）	admin_doc-default
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	模板编辑	admin_theme-default
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	数据库备份（数据库管理）	admin_db-backup
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	百科联盟	admin_hdapi-default
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	图片百科	admin_image-default
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	基本概况统计(后台统计)	admin_statistics-stand
+<?php exit;?>	auioh413	超级管理员	10.10.12.122	04-11 18:26	Map	admin_actions-map
