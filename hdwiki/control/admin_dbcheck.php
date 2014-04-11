@@ -4,37 +4,37 @@
 
 class control extends base{
 
-	function control(& $get,& $post){
-		$this->base( & $get,& $post);
-		$this->load('dbcheck');
-		$this->load('db');
-		
-		$this->view->setlang($this->setting['lang_name'],'back');
-	}
+    function control(& $get,& $post){
+        $this->base($get,$post);
+        $this->load('dbcheck');
+        $this->load('db');
 
-	function dodefault() {
-		$this->view->display('admin_dbcheck');
-	}
+        $this->view->setlang($this->setting['lang_name'],'back');
+    }
 
-	function dodbcheck(){
-		$out_info = $_ENV['dbcheck']->dbcheck();
-		echo $out_info;
-		return true;
-	}
+    function dodefault() {
+        $this->view->display('admin_dbcheck');
+    }
 
-	function dodbcompare(){
-		$out_info = $_ENV['dbcheck']->dbcompare();
-		echo $out_info;
-		return true;
-	}
+    function dodbcheck(){
+        $out_info = $_ENV['dbcheck']->dbcheck();
+        echo $out_info;
+        return true;
+    }
 
-	function dodbrepair_struct(){
-		$out_info = $_ENV['dbcheck']->dbrepair_struct();
-		echo $out_info;
-		return true;
-	}
+    function dodbcompare(){
+        $out_info = $_ENV['dbcheck']->dbcompare();
+        echo $out_info;
+        return true;
+    }
+
+    function dodbrepair_struct(){
+        $out_info = $_ENV['dbcheck']->dbrepair_struct();
+        echo $out_info;
+        return true;
+    }
 
 
-		
+
 }
 ?>
