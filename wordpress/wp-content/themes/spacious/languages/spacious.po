@@ -569,6 +569,15 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: inc/widgets/widgets.php:661
+msgid ""
+"Show your some clients. Best for Business Top or Bottom sidebar."
+msgstr ""
+
+#: inc/widgets/widgets.php:663
+msgid "TG: Our Clients Widget"
+msgstr ""
+
 #: navigation.php:22
 msgid "&laquo; Previous"
 msgstr ""
