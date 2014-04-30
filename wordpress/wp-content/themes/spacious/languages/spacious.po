@@ -18,7 +18,7 @@ msgstr ""
 
 #: 404.php:22
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "啊！页面丢了。"
 
 #: 404.php:24
 msgid "It looks like nothing was found at this location. Try the search below."
