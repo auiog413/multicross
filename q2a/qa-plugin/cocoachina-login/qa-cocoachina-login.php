@@ -113,7 +113,7 @@
 						'label' => '原生登录页访问密码:',
 						'value' => qa_html(qa_opt('original_login_page_secret')),
 						'tags' => 'name="original_login_page_secret_field"',
-						'error' => $ready ? '原生登录页面访问链接： http://' . $_SERVER['HTTP_HOST'] . '/index.php?qa=login&to=index.php&o=123456' : '原生登录页面需要输入访问密码才能打开，原生登录页面是为了方便管理员管理系统<br />如何使用：在登录页面url后面加上 &o=[此处输入的密码]',
+						'error' => $ready ? '原生登录页面访问链接： http://' . $_SERVER['HTTP_HOST'] . '/index.php?qa=login&to=index.php&o=' . qa_opt('original_login_page_secret') : '原生登录页面需要输入访问密码才能打开，原生登录页面是为了方便管理员管理系统<br />如何使用：在登录页面url后面加上 &o=[此处输入的密码]',
 					),
 				),
 				
