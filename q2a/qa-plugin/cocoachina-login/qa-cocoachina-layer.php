@@ -46,8 +46,9 @@
                 }
                 
                 function main_part ($key, $part) {
-                        if (strpos($key, 'form')===0 && $part['hidden']['dologin'] == 1) {
-                                
+                        $app_ready = strlen(qa_opt('cocoachina_id')) && strlen(qa_opt('cocoachina_secret'));
+                        $page_ready = strpos($key, 'form')===0 && $part['hidden']['dologin'] == 1;
+                        if ($app_ready && $page_ready) {
                                 $tourl = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php';
                                 $ref_tourl = rawurlencode($tourl);
                                 $referer = 'http://' . $_SERVER['HTTP_HOST'] . "/index.php?qa=cocoachina-login&to=$ref_tourl";
