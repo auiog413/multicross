@@ -101,30 +101,37 @@ wp_head();
 
 		<?php
    	if( of_get_option( 'spacious_activate_slider', '0' ) == '1' ) {
-			if ( is_home() || is_front_page() ) {
-   			spacious_featured_image_slider();
+   		if( of_get_option( 'spacious_blog_slider', '0' ) == '0' ) {
+   			if( is_home() || is_front_page() ) {
+   				spacious_featured_image_slider();
 			}
+   		} else {
+   			if( is_front_page() ) {
+   				spacious_featured_image_slider();
+   			}
+   		}
    	}
 
-		if( ( '' != spacious_header_title() )  && !( is_home() || is_front_page() ) ) {
-		?>
-		<div class="header-post-title-container clearfix">
-			<div class="inner-wrap">
-				<div class="post-title-wrapper">
-					<?php 
-					if( '' != spacious_header_title() ) {
-					?>
-				   	<h1 class="header-post-title-class"><?php echo spacious_header_title(); ?></h1>
-				   <?php
-					}
-					?>
+		if( ( '' != spacious_header_title() )  && !( is_front_page() ) ) {
+			if( !( of_get_option( 'spacious_blog_slider', '0' ) == '0' && is_home( ) ) ){ ?>
+				<div class="header-post-title-container clearfix">
+					<div class="inner-wrap">
+						<div class="post-title-wrapper">
+							<?php 
+							if( '' != spacious_header_title() ) {
+							?>
+						   	<h1 class="header-post-title-class"><?php echo spacious_header_title(); ?></h1>
+						   <?php
+							}
+							?>
+						</div>
+						<?php if( function_exists( 'spacious_breadcrumb' ) ) { spacious_breadcrumb(); } ?>
+					</div>
 				</div>
-				<?php if( function_exists( 'spacious_breadcrumb' ) ) { spacious_breadcrumb(); } ?>
-			</div>
-		</div>
-		<?php
-	   }
-	   ?>
+			<?php
+			}
+	   	}
+		?>
 	</header>
 	<?php do_action( 'spacious_after_header' ); ?>
 	<?php do_action( 'spacious_before_main' ); ?>

@@ -50,7 +50,7 @@ function spacious_widgets_init() {
 	register_sidebar( array(
 		'name' 				=> __( 'Business Top Sidebar', 'spacious' ),
 		'id' 					=> 'spacious_business_page_top_section_sidebar',
-		'description'   	=> __( 'Shows widgets on Business Page Template Top Section. Sutiable widget: ', 'spacious' ),
+		'description'   	=> __( 'Shows widgets on Business Page Template Top Section.', 'spacious' ).' '.__( 'Suitable widget: TG: Services, TG: Call To Action Widget, TG: Featured Widget', 'spacious' ),
 		'before_widget' 	=> '<section id="%1$s" class="widget %2$s clearfix">',
 		'after_widget'  	=> '</section>',
 		'before_title'  	=> '<h1 class="widget-title">',
@@ -61,7 +61,7 @@ function spacious_widgets_init() {
 	register_sidebar( array(
 		'name' 				=> __( 'Business Middle Left Sidebar', 'spacious' ),
 		'id' 					=> 'spacious_business_page_middle_section_left_half_sidebar',
-		'description'   	=> __( 'Shows widgets on Business Page Template Middle Section Left Half. Sutiable widget: ', 'spacious' ),
+		'description'   	=> __( 'Shows widgets on Business Page Template Middle Section Left Half.', 'spacious' ).' '.__( 'Suitable widget: TG: Testimonial, TG: Featured Single Page', 'spacious' ),
 		'before_widget' 	=> '<section id="%1$s" class="widget %2$s clearfix">',
 		'after_widget'  	=> '</section>',
 		'before_title'  	=> '<h1 class="widget-title">',
@@ -72,7 +72,7 @@ function spacious_widgets_init() {
 	register_sidebar( array(
 		'name' 				=> __( 'Business Middle Right Sidebar', 'spacious' ),
 		'id' 					=> 'spacious_business_page_middle_section_right_half_sidebar',
-		'description'   	=> __( 'Shows widgets on Business Page Template Middle Section Right Half. Sutiable widget: ', 'spacious' ),
+		'description'   	=> __( 'Shows widgets on Business Page Template Middle Section Right Half.', 'spacious' ).' '.__( 'Suitable widget: TG: Testimonial, TG: Featured Single Page', 'spacious' ),
 		'before_widget' 	=> '<section id="%1$s" class="widget %2$s clearfix">',
 		'after_widget'  	=> '</section>',
 		'before_title'  	=> '<h1 class="widget-title">',
@@ -84,7 +84,7 @@ function spacious_widgets_init() {
 	register_sidebar( array(
 		'name' 				=> __( 'Business Bottom Sidebar', 'spacious' ),
 		'id' 					=> 'spacious_business_page_bottom_section_sidebar',
-		'description'   	=> __( 'Shows widgets on Business Page Template Bottom Section. Sutiable widget: ', 'spacious' ),
+		'description'   	=> __( 'Shows widgets on Business Page Template Bottom Section.', 'spacious' ).' '.__( 'Suitable widget: TG: Services, TG: Call To Action Widget, TG: Featured Widget', 'spacious' ),
 		'before_widget' 	=> '<section id="%1$s" class="widget %2$s clearfix">',
 		'after_widget'  	=> '</section>',
 		'before_title'  	=> '<h1 class="widget-title">',
@@ -162,8 +162,7 @@ function spacious_widgets_init() {
 	register_widget( "spacious_service_widget" );
 	register_widget( "spacious_call_to_action_widget" );
 	register_widget( "spacious_testimonial_widget" );
-	register_widget( "spacious_recent_work_widget" );
-	register_widget( "spacious_our_clients_widget" );
+	register_widget( "spacious_recent_work_widget" );	
 }
 
 /****************************************************************************************/
@@ -256,7 +255,7 @@ function spacious_widgets_init() {
 	 			endif;
 		 	}
 			$output .= '<p>'.get_the_excerpt().'...'.'</p>'; 
-			$output .= '<a class="read-more" href="'. get_permalink() .'">' . __('Read more', 'spacious') . '</a>';
+			$output .= '<a class="read-more" href="'. get_permalink() .'">'.__( 'Read more', 'spacious' ).'</a>';
 	 		$output .= $after_widget;
 	 		endwhile;
 	 		// Reset Post Data
@@ -637,7 +636,7 @@ class spacious_testimonial_widget extends WP_Widget {
 					<div class="<?php echo $class; ?>">
 						<?php 
 						if ( has_post_thumbnail( ) ) {
-							echo '<div class="service-image"><a title="'.get_the_title().'"href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID,'featured-blog-medium').'</a></div>';				
+							echo '<div class="service-image"><a title="'.get_the_title().'" href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID,'featured-blog-medium').'</a></div>';				
 						}
 						?>
 					</div>			
@@ -650,85 +649,6 @@ class spacious_testimonial_widget extends WP_Widget {
 		<?php echo $after_widget;
  		}
  	}
-
-/**************************************************************************************/
-    
-/**
- * Show your some clients.
- */
- class spacious_our_clients_widget extends WP_Widget {
- 	function spacious_our_clients_widget() {
- 		$widget_ops = array( 'classname' => 'widget_our_clients', 'description' => __( 'Show your some clients. Best for Business Top or Bottom sidebar.', 'spacious' ) );
-		$control_ops = array( 'width' => 200, 'height' =>250 ); 
-		parent::WP_Widget( false, $name = __( 'TG: Our Clients Widget', 'spacious' ), $widget_ops, $control_ops);
- 	}
-
- 	function form( $instance ) {
- 		$instance = wp_parse_args( (array) $instance, $att_defaults );
-		$title = esc_attr( $instance[ 'title' ] );
-		$text = esc_textarea($instance['text']);
-        $page_id = absint( $instance[ 'page_id' ] );
-        $show_counts = absint( $instance[ 'show_counts' ] ) < 3 ? 3: absint( $instance[ 'show_counts' ] );
-		?>
-	
-		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'spacious' ); ?></label> 
-			<input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
-		</p>
-		<?php _e( 'Description','spacious' ); ?>
-		<textarea class="widefat" rows="10" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'page_id' ); ?>"><?php _e( 'Page', 'spacious' ); ?>:</label>
-            <?php wp_dropdown_pages( array( 'show_option_none' =>' ', 'name' => $this->get_field_name( 'page_id' ), 'selected' => $instance['page_id'] ) ); ?>
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('show_counts'); ?>"><?php _e( 'Show Counts:', 'spacious' ); ?></label>
-            <input id="<?php echo $this->get_field_id('show_counts'); ?>" name="<?php echo $this->get_field_name('show_counts'); ?>" type="text" value="<?php echo $show_counts; ?>" />
-        </p>
-		<?php
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		
-        $instance['title']       = $new_instance['title'];
-        $instance['text']        = $new_instance['text'];
-        $instance['page_id']     = $new_instance['page_id'];
-        $instance['show_counts'] = $new_instance['show_counts'];
-        
-		return $instance;
-	}
-
-	function widget( $args, $instance ) {
- 		extract( $args );
- 		extract( $instance );
-        global $post;
-        
-        $title        = $instance['title'] ? $instance['title'] : '';
-        $description  = $instance['text']  ? $instance['text']  : '';
-        $page_id      = $instance['page_id'] ? $instance['page_id'] : '';
-        $show_counts  = $instance['show_counts'] ? $instance['show_counts'] : 3;
-        
-        if ( $page_id )
-        {
-            echo $before_widget;
-            
-			if ( !empty( $title ) ) { 
-                echo $before_title . esc_html( $title ) . $after_title; 
-            }
-            
-            echo '<p>' . esc_textarea( $description ) . '</p>';
-            
-            $page_contents = get_page($page_id, 'ARRAY_A');
-            echo '<div class="spacious_clients_wrap">' . $page_contents['post_content'] . '</div>';
-            
-            // Reset Post Data
-	 		wp_reset_query();
-            
-            echo $after_widget;
-        }
- 	}
- }
 
 /**************************************************************************************/
 ?>

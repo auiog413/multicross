@@ -190,6 +190,10 @@ function spacious_header_title() {
 	elseif( is_single()  ) {
 		$spacious_header_title = get_the_title();
 	}
+	elseif( is_home() ){
+		$queried_id = get_option( 'page_for_posts' );
+		$spacious_header_title = get_the_title( $queried_id );
+	}
 	else {
 		$spacious_header_title = '';
 	}

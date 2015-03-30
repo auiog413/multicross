@@ -65,7 +65,7 @@ function optionsframework_options() {
 
 	// Header image position option
 	$options[] = array(
-		'name' 		=> __( 'Heder Image Position', 'spacious' ),
+		'name' 		=> __( 'Header Image Position', 'spacious' ),
 		'desc' 		=> __( 'Choose top header image display position.', 'spacious' ),
 		'id' 			=> 'spacious_header_image_position',
 		'std' 		=> 'above',
@@ -138,6 +138,20 @@ function optionsframework_options() {
 								'no_sidebar_full_width'				=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
 								'no_sidebar_content_centered'		=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
 							)
+	);
+
+	$options[] = array(
+		'name' 		=> __( 'Blog Posts display type', 'spacious' ),
+		'desc' 		=> __( 'Choose the display type for the latests posts view or posts page view (static front page).', 'spacious' ),
+		'id' 			=> 'spacious_archive_display_type',
+		'std' 		=> 'blog_large',
+		'type' 		=> 'radio',
+		'options' 	=> array(
+							'blog_large' 	=> __( 'Blog Image Large', 'spacious' ),
+							'blog_medium' 	=> __( 'Blog Image Medium', 'spacious' ),
+							'blog_medium_alternate' 	=> __( 'Blog Image Alternate Medium', 'spacious' ),
+							'blog_full_content' 	=> __( 'Blog Full Content', 'spacious' ),
+						)
 	);
 
 	// Site primary color option
@@ -216,6 +230,15 @@ function optionsframework_options() {
 		'type' 		=> 'checkbox'
 	);
 
+	// Disable slider in blog page
+	$options[] = array(
+		'name' 		=> __( 'Disable slider in Posts page', 'spacious' ),
+		'desc' 		=> __( 'Check to disable slider in Posts Page', 'spacious' ),
+		'id' 			=> 'spacious_blog_slider',
+		'std' 		=> '0',
+		'type' 		=> 'checkbox'
+	);
+
 	// Slide options
 	for( $i=1; $i<=5; $i++) {
 		$options[] = array(
@@ -225,21 +248,18 @@ function optionsframework_options() {
 			'type' 	=> 'upload'
 		);
 		$options[] = array(
-			'name' 	=> sprintf( __( 'Slider Title %1$s', 'spacious' ), $i ),
 			'desc' 	=> __( 'Enter title for your slider.', 'spacious' ),
 			'id' 		=> 'spacious_slider_title'.$i,
 			'std' 	=> '',
 			'type' 	=> 'text'
 		);
 		$options[] = array(
-			'name' 	=> sprintf( __( 'Slider Description %1$s', 'spacious' ), $i ),
 			'desc' 	=> __( 'Enter your slider description.', 'spacious' ),
 			'id' 		=> 'spacious_slider_text'.$i,
 			'std' 	=> '',
 			'type' 	=> 'textarea'
 		);
 		$options[] = array(
-			'name' 	=> sprintf( __( 'Slider redirect link %1$s', 'spacious' ), $i ),
 			'desc' 	=> __( 'Enter link to redirect slider when clicked', 'spacious' ),
 			'id' 		=> 'spacious_slider_link'.$i,
 			'std' 	=> '',
@@ -265,6 +285,7 @@ function spacious_options_display_sidebar() { ?>
 					<div class="option-btn"><a class="btn support" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>"><?php esc_attr_e( 'Free Support' , 'spacious' ); ?></a></div>
 					<div class="option-btn"><a class="btn doc" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/spacious/' ); ?>"><?php esc_attr_e( 'Documentation' , 'spacious' ); ?></a></div>
 					<div class="option-btn"><a class="btn demo" target="_blank" href="<?php echo esc_url( 'http://demo.themegrill.com/spacious/' ); ?>"><?php esc_attr_e( 'View Demo' , 'spacious' ); ?></a></div>
+					<div class="option-btn"><a class="btn rate" target="_blank" href="<?php echo esc_url( 'http://wordpress.org/themes/spacious/' ); ?>"><?php esc_attr_e( 'Rate this theme' , 'spacious' ); ?></a></div>
 
 	      			<div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
 	      				<strong><?php esc_attr_e( 'If you like our work. Buy us a beer.', 'spacious' ); ?></strong>

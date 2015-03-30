@@ -46,6 +46,57 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.4 =
+* W3C validation error fixed.
+* Catalan language file added. Thanks to Mr. Jordi Flamarich for providing the language files. 
+
+= Version 1.1.3 =
+* Blog template removed as per WordPress guidelines.
+* Checkbox option added to disable the slider for posts page.
+* Slovak language file added. Thanks to Mr. Michal Kralik for providing the language files. 
+
+= Version 1.1.2 =
+* Blog page display type option added.
+* Function added to shift the page using blog template to posts page.
+
+= Version 1.1.1 =
+* Added traditional Chinese (Taiwan) language file.
+* Slider featured content css adjustment in smaller devices.
+* Small typo fix.
+* Small CSS adjustment for WP-PageNavi plugin.
+* Slider options presentation improved in theme options panel.
+* POT language file updated.
+
+= Version 1.1 =
+* Removed the extra three dots that appeared in the excerpt.
+* Scroll to top button appearance improved.
+* TG: Call to Action widget button appearance improved.
+* Some typo fix and added guidelines for Business page template widgets.
+* POT file updated.
+* Lithuanian language file added. Thanks to Mr. Edgaras A for providing us the language files.
+* Dutch language file added. Thanks to Mr. Antoine Hurkmans for providing us the language files.
+* Unnecessary code lines removed in functions.php file.
+
+= Version 1.0.9 =
+* Testimonial icon rotated.
+* Rating button added at options panel.
+
+= Version 1.0.8 = 
+* Added Spanish language file. Thanks to Francisco Marín <francisco@usuwp.es> for providing us the translation file.
+
+= Version 1.0.7 = 
+* Added missing field (author, vcard, updated) for Google Structured Data.
+* Missing string added in the pot file.
+* Added Czech language file. Thanks to Pavel Šimonek <pasimonek@delcam.cz> for providing us the translation file.
+* Added French language file. Thanks to Elie Michel <elie.michel@ens.fr> for providing us the translation file.
+
+= Version 1.0.6 = 
+* Added Russian language file. Thanks to Alex <tkia@ya.ru> for providing us the translation file.
+* Added Norsk(Bokmål) language file. Thanks to Ingebjørg Synnøve Thoresen <ist@kreasjoner.com> for providing us the translation file.
+
+= Version 1.0.5 = 
+* Fixed layout issue for wide 978px and narrow 978px layout for smaller screen size of less than 768px.
+* Added hover image effect for linked images.
 
 = Version 1.0.4 = 
 * Featured image size issue fixed for featured-blog-medium-small image.

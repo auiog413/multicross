@@ -86,6 +86,13 @@ define('WP_DEBUG', false);
  * 如需禁用，请移除或注释掉本行。
  */
 define('WP_ZH_CN_ICP_NUM', true);
+define('WP_ALLOW_MULTISITE', true);
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+define('DOMAIN_CURRENT_SITE', 'wordpress.itron.me');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
 
 /* 好了！请不要再继续编辑。请保存本文件。使用愉快！ */
 

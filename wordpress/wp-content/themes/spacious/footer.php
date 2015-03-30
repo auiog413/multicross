@@ -19,7 +19,7 @@
 				<div class="inner-wrap">
 					<div class="footer-socket-area">
 						<?php do_action( 'spacious_footer_copyright' ); ?>
-						<nav class="small-menu" class="clearfix">
+						<nav class="small-menu clearfix">
 							<?php
 								if ( has_nav_menu( 'footer' ) ) {									
 										wp_nav_menu( array( 'theme_location' => 'footer',

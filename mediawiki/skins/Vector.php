@@ -212,7 +212,7 @@ class VectorTemplate extends BaseTemplate {
 			</div>
 			<div id="mw-panel">
 					<div id="p-logo" role="banner"><a style="background-image: url(<?php $this->text( 'logopath' ) ?>);" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a></div>
-				<?php $this->renderPortals( $this->data['sidebar'] ); ?>
+				<?php file_put_contents('/home/auioh413/mediawiki_sidebar.log', var_export(wfMessage( 'sidebar' )->inContentLanguage()->plain(), true));$this->renderPortals( $this->data['sidebar'] ); ?>
 			</div>
 		</div>
 		<div id="footer" role="contentinfo"<?php $this->html( 'userlangattributes' ) ?>>
